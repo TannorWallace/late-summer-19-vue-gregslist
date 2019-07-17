@@ -51,6 +51,14 @@ export default new Vuex.Store({
       } catch (error) {
         console.error(error)
       }
-    }
+    },
+    async addCar({ dispatch, commit }, payload) {
+      try {
+        let res = await api.post('cars/', payload)
+        dispatch('getCars')
+      } catch (error) {
+        console.error(error)
+      }
+    },
   }
 })
