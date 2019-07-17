@@ -23,6 +23,13 @@ export default new Router({
       }
     },
     {
+      path: '/cars/:carId',
+      name: 'car',
+      component: function () {
+        return import(/* webpackChunkName: "car" */ './views/Car.vue')
+      }
+    },
+    {
       path: '*',
       redirect: '/cars'
     }
