@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // @ts-ignore
 import Cars from './views/Cars.vue'
+// @ts-ignore
+import Houses from './views/Houses.vue'
+
+import Jobs from './views/Jobs.vue'
 
 Vue.use(Router)
 
@@ -10,7 +14,17 @@ export default new Router({
     {
       path: '/cars',
       name: 'cars',
-      component: Cars
+      component: Cars,
+    },
+    {
+      path: '/houses',
+      name: 'houses',
+      component: Houses,
+    },
+    {
+      path: '/jobs',
+      name: 'jobs',
+      component: Jobs,
     },
     {
       path: '/about',
@@ -29,6 +43,21 @@ export default new Router({
         return import(/* webpackChunkName: "car" */ './views/Car.vue')
       }
     },
+    {
+      path: '/houses/:houseId',
+      name: 'house',
+      component: function () {
+        return import(/* webpackChunkName: "car" */ './views/House.vue')
+      }
+    },
+    {
+      path: '/jobs/:jobId',
+      name: 'job',
+      component: function () {
+        return import(/* webpackChunkName: "car" */ './views/Job.vue')
+      }
+    },
+
     {
       path: '*',
       redirect: '/cars'

@@ -29,11 +29,11 @@
     <div class="row">
       <!-- cars in the v-for references the method name of the computed called "cars" -->
       <div class="car col-4 border rounded border-secondary" v-for="car in cars" @click="viewCar(car)">
-        <h5>{{car.make}}</h5>
+        <h5>Make:{{car.make}}</h5>
         <img :src="car.imgUrl" alt="">
-        <p>{{car.model}}</p>
-        <p>{{car.year}}</p>
-        <p>{{car.price}}</p>
+        <p>Model:{{car.model}}</p>
+        <p>Year:{{car.year}}</p>
+        <p>Price:{{car.price}}</p>
       </div>
     </div>
   </div>
@@ -74,6 +74,11 @@
 
 <style scoped>
   img {
-    height: 200px;
+    height: 250px;
+    width: 300px
+  }
+
+  form .form-control {
+    border: solid 2px black;
   }
 </style>
